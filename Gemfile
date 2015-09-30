@@ -44,3 +44,6 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'rails_12factor', '12'
+gem 'puma', '2.14.0'
