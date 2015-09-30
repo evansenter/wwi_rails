@@ -45,5 +45,5 @@ group :development, :test do
 end
 
 
-gem 'rails_12factor', '12'
+gem 'rails_12factor', '0.0.3'
 gem 'puma', '2.14.0'
