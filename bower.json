@@ -1,0 +1,21 @@
+{
+  "name": "wwi_rails",
+  "version": "0.0.0",
+  "homepage": "https://github.com/evansenter/wwi_rails",
+  "authors": [
+    "Evan Senter <evansenter@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "pure": "~0.6.0"
+  }
+}
