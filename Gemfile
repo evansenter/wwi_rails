@@ -46,7 +46,9 @@ end
 
 gem 'rails_12factor', '0.0.3'
 gem 'puma', '2.14.0'
-gem 'blogit', '1.1.1'
-gem 'activeadmin', github: 'activeadmin'
 gem 'bower-rails', '0.10.0'
 gem 'haml-rails', '0.9.0'
+gem 'blogit', '1.1.1'
+gem 'acts-as-taggable-on', '3.5.0'
+
+gem 'devise', '3.5.2'
