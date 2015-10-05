@@ -1,81 +1,62 @@
-.header
-  .home-menu.pure-menu.pure-menu-horizontal.pure-menu-fixed
-    %a.pure-menu-heading{:href => ""} Your Site
-    %ul.pure-menu-list
-      %li.pure-menu-item.pure-menu-selected
-        %a.pure-menu-link{:href => "#"} Home
-      %li.pure-menu-item
-        %a.pure-menu-link{:href => "#"} Tour
-      %li.pure-menu-item
-        %a.pure-menu-link{:href => "#"} Sign Up
-.splash-container
-  .splash
-    %h1.splash-head Big Bold Text
-    %p.splash-subhead
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    %p
-      %a.pure-button.pure-button-primary{:href => "http://purecss.io"} Get Started
-.content-wrapper
-  .content
-    %h2.content-head.is-center Excepteur sint occaecat cupidatat.
-    .pure-g
-      .l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
+%body
+  .header
+    .home-menu.pure-menu.pure-menu-horizontal.pure-menu-fixed
+      %a.pure-menu-heading{:href => "#", :unselectable => "on"} World Water Institute
+      %ul.pure-menu-list
+        %li.pure-menu-item.pure-menu-selected
+          %a.pure-menu-link{:href => "#"} Home
+  .splash-container
+    .splash
+      %h1.splash-head Hydrosustainability
+      %p.splash-subhead
+        What would happen if we took market-based approaches to solving the
+        world’s largest water resource and scarcity challenges?
+  .content-wrapper
+    .content
+      %h2.content-head.is-center Innovating research in market-based water solutions
+      .l-box-lrg
         %h3.content-subhead
-          %i.fa.fa-rocket
-          Get Started Quickly
+          %i.fa.fa-flask>
+          Our challenge
         %p
-          Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-      .l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-        %h3.content-subhead
-          %i.fa.fa-mobile
-          Responsive Layouts
+          WWI is an institution composed of thought leaders in academia and science,
+          dedicated to finding creative solutions to the world's most pressing environmental issues.
+          We want to discover new technologies that transform historical use, distribution, and regulation
+          of water and its associated rights by leveraging science, policy, and finance. Our researchers will
+          unveil approaches to water resource management that transform the way the nation and the world
+          thinks about and uses water.
+    .ribbon.l-box-lrg.pure-g
+      .l-box-lrg.is-center.pure-u-1.pure-u-md-1-2.pure-u-lg-2-5
+        %img.pure-img-responsive{:alt => "File Icons", :src => "/assets/wwi_logo_light.svg", :width => "300"}/
+      .pure-u-1.pure-u-md-1-2.pure-u-lg-3-5
+        %h2.content-head.content-head-ribbon Our mission
         %p
-          Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-      .l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-        %h3.content-subhead
-          %i.fa.fa-th-large
-          Modular
-        %p
-          Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-      .l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-        %h3.content-subhead
-          %i.fa.fa-check-square-o
-          Plays Nice
-        %p
-          Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-  .ribbon.l-box-lrg.pure-g
-    .l-box-lrg.is-center.pure-u-1.pure-u-md-1-2.pure-u-lg-2-5
-      %img.pure-img-responsive{:alt => "File Icons", :src => "img/common/file-icons.png", :width => "300"}/
-    .pure-u-1.pure-u-md-1-2.pure-u-lg-3-5
-      %h2.content-head.content-head-ribbon Laboris nisi ut aliquip.
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor.
-  .content
-    %h2.content-head.is-center Dolore magna aliqua. Uis aute irure.
-    .pure-g
-      .l-box-lrg.pure-u-1.pure-u-md-2-5
-        %form.pure-form.pure-form-stacked
-          %fieldset
-            %label{:for => "name"} Your Name
-            %input#name{:placeholder => "Your Name", :type => "text"}/
-            %label{:for => "email"} Your Email
-            %input#email{:placeholder => "Your Email", :type => "email"}/
-            %label{:for => "password"} Your Password
-            %input#password{:placeholder => "Your Password", :type => "password"}/
-            %button.pure-button{:type => "submit"} Sign Up
-      .l-box-lrg.pure-u-1.pure-u-md-3-5
-        %h4 Contact Us
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        %h4 More Information
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-  .footer.l-box.is-center
-    View the source of this layout to learn more. Made with love by the YUI Team.
+          World Water Institute (WWI) is a nonprofit think tank dedicated to sourcing, disseminating, and
+          increasing awareness of key issues that effect water resources globally.
+    .content
+      %h2.content-head.is-center Market-based responses to real world water issues.
+      .pure-g
+        .l-box-lrg.pure-u-1.pure-u-md-2-5
+          %form.pure-form.pure-form-stacked
+            %fieldset
+              %label{:for => "name"} Your Name
+              %input#name{:placeholder => "Your Name", :type => "text"}/
+              %label{:for => "email"} Your Email
+              %input#email{:placeholder => "Your Email", :type => "email"}/
+              %button.pure-button{:type => "submit"} Sign Up
+        .l-box-lrg.pure-u-1.pure-u-md-3-5
+          %h4 Our standard
+          %p
+            WWI is for scholars who are committed to bringing cutting edge perspectives to
+            issues and policies surrounding water, to educate and promote effective use, distribution,
+            and recycling of the resource.
+          %h4 Learn more
+          %p
+            Join our provoking research movement to help deliver insights to markets all over the world.
+            To learn more about WWI during our web page development period, please use the form on the
+            left to request further information and a member of our team will contact you.
+    .footer.l-box.is-center
+      World Water Institute is a 501(c)(3) non-profit organization that empowers people to solve global
+      water challenges. We partner with leading universities, research institutions, and thought leaders
+      who help to accelerate cutting edge research surrounding water trading to promote effective policy
+      and transformational market solutions.
