@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  root "welcome#index"
-  devise_for :users
-  mount Blogit::Engine => "/blog"
+  devise_for :users, has_one: :contact_info
+
+  devise_scope :user do
+    get    "register", to: "devise/registrations#new"
+    get    "login",    to: "devise/sessions#new"
+    delete "logout",   to: "devise/sessions#destroy"
+  end
+
   mount Bootsy::Engine => "/bootsy", as: "bootsy"
+
+  root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

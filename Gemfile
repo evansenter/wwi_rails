@@ -48,8 +48,6 @@ group :development, :test do
   gem "pry", "0.10.2"
 end
 
-gem "acts-as-taggable-on", "3.5.0"
-gem "blogit", "1.1.1"
 gem "bootsy", "2.1.0"
 gem "bower-rails", "0.10.0"
 gem "devise", "3.5.2"
