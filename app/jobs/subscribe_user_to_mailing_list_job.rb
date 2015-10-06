@@ -5,11 +5,14 @@ class SubscribeUserToMailingListJob
     Gibbon::Request.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(
       body: {
         email_address: user.email,
-        status: "pending",
-        merge_vars: {
-          ANAME: "Full Name"
+        status: "subscribed",
+        merge_fields: {
+          FNAME: "First Name",
+          LNAME: "First Name"
         }
       }
     )
+  rescue Gibbon::MailChimpError => error
+    throw error unless error.title == "Member Exists"
   end
 end

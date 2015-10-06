@@ -4,7 +4,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  blogs
+
   after_create :subscribe_user_to_mailing_list
+
+  has_one :contact_info
+
+  accepts_nested_attributes_for :contact_info
+
+  validates_associated :contact_info, message: "is not complete"
+
+  delegate :full_name, to: :contact_info
 
   private
 
