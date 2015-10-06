@@ -9,16 +9,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << {
       contact_info_attributes: [
-        :full_name
+        :first_name,
+        :last_name
       ]
     }
-  end
-
-  def require_authorized_user!
-    unless user_signed_in? && current_user.authorized?
-      flash.alert = "Your account must be authorized before doing that."
-      redirect_to :back
-    end
   end
 
   def require_admin!

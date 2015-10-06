@@ -14,6 +14,9 @@
  *= require pure/grids-responsive
  *= require font-awesome/css/font-awesome
  *= require bootsy
- *= require_tree .
- *= require_self
  */
+
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "welcome";
