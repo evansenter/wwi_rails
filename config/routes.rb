@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   mount Bootsy::Engine => "/bootsy", as: "bootsy"
 
-  root "welcome#index"
+  root "welcome#landing"
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
