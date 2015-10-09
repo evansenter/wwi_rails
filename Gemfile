@@ -51,6 +51,7 @@ end
 gem "bootsy", "2.1.0"
 gem "bower-rails", "0.10.0"
 gem "devise", "3.5.2"
+gem "font-awesome-sass", "4.4.0"
 gem "gibbon", "2.0.0"
 gem "haml-rails", "0.9.0"
 gem "puma", "2.14.0"

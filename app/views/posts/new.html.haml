@@ -1,8 +1,8 @@
-= form_for @post do |form|
+= form_for @post, html: { class: "pure-form" } do |form|
   = form.label :title
   = form.text_field :title
 
   = form.label :body
-  = form.bootsy_area :body
+  = form.bootsy_area :body, class: "pure-input-1", rows: 12
 
   = form.submit
