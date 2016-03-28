@@ -43,7 +43,8 @@ GEM
       carrierwave (~> 0.10)
       mini_magick (~> 4.3)
       remotipart (~> 1.2)
-    bower-rails (0.10.0)
+    bower (0.0.5)
+      multi_json
     builder (3.2.2)
     byebug (8.2.2)
     carrierwave (0.10.0)
@@ -211,7 +212,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bootsy
-  bower-rails
+  bower
   byebug
   devise
   dotenv-rails

@@ -49,7 +49,7 @@ group :development, :test do
 end
 
 gem "bootsy"
-gem "bower-rails"
+gem "bower"
 gem "devise"
 gem "font-awesome-sass"
 gem "gibbon"
