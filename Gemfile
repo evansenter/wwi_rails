@@ -13,7 +13,7 @@ gem "mysql2"
 gem "newrelic_rpm"
 gem "puma"
 gem "rails"
-gem "rails_12factor"
+gem "rails_12factor", group: :production
 gem "sass-rails"
 gem "sucker_punch"
 gem "transloadit-rails"
