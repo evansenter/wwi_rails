@@ -2,7 +2,7 @@ class SubscribeUserToMailingListJob
   include SuckerPunch::Job
 
   def perform(user)
-    Gibbon::Request.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(
+    Gibbon::Request.lists(Figaro.env.mailchimp_list_id).members.create(
       body: {
         email_address: user.email,
         status: "subscribed",
