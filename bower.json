@@ -4,7 +4,7 @@
   "main": "",
   "private": true,
   "dependencies": {
-    "pure": "~0.6.0",
-    "bootstrap-sass": "~3.3.5"
+    "pure": "^0.6.0",
+    "underscore": "^1.8.3"
   }
 }
