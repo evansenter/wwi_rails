@@ -100,7 +100,7 @@ build-iPhoneSimulator/
 
 ### Rails ###
 .env
-config/application.yml
+/config/application.yml
 *.rbc
 capybara-*.html
 .rspec

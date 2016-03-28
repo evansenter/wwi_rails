@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     delete "logout",   to: "devise/sessions#destroy"
   end
 
-  mount Bootsy::Engine => "/bootsy", as: "bootsy"
-
   root "welcome#landing"
   resources :posts
 
