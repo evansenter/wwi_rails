@@ -1,17 +1,17 @@
 source "https://rubygems.org"
-ruby "2.2.3"
+ruby "2.3.0"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "4.2.0"
+gem "rails", ">= 5.0.0.beta3"
 # Use postgresql as the database for Active Record
 gem "pg"
 # Use SCSS for stylesheets
-gem "sass-rails", "~> 5.0"
+gem "sass-rails"
 # Use Uglifier as compressor for JavaScript assets
-gem "uglifier", ">= 1.3.0"
+gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
-# gem "coffee-rails", "~> 4.1.0"
+# gem "coffee-rails"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
 
@@ -20,12 +20,12 @@ gem "jquery-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "turbolinks"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "jbuilder", "~> 2.0"
+gem "jbuilder"
 # bundle exec rake doc:rails generates the API under doc/api.
-gem "sdoc", "~> 0.4.0", group: :doc
+gem "sdoc"
 
 # Use ActiveModel has_secure_password
-# gem "bcrypt", "~> 3.1.7"
+# gem "bcrypt"
 
 # Use Unicorn as the app server
 # gem "unicorn"
@@ -38,22 +38,22 @@ group :development, :test do
   gem "byebug"
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem "web-console", "~> 2.0"
+  gem "web-console"
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
 
-  gem "awesome_print", "1.6.1"
-  gem "dotenv-rails", "2.0.2"
-  gem "pry", "0.10.2"
+  gem "awesome_print"
+  gem "dotenv-rails"
+  gem "pry"
 end
 
-gem "bootsy", "2.1.0"
-gem "bower-rails", "0.10.0"
-gem "devise", "3.5.2"
-gem "font-awesome-sass", "4.4.0"
-gem "gibbon", "2.0.0"
-gem "haml-rails", "0.9.0"
-gem "puma", "2.14.0"
-gem "rails_12factor", "0.0.3"
-gem "sucker_punch", "1.5.1"
+gem "bootsy"
+gem "bower-rails"
+gem "devise"
+gem "font-awesome-sass"
+gem "gibbon"
+gem "haml-rails"
+gem "puma"
+gem "rails_12factor"
+gem "sucker_punch"
