@@ -1,5 +1,5 @@
 class ContactInfo < ActiveRecord::Base
-  ROLES = %i[basic admin]
+  ROLES = %i[unregistered registered verified admin]
 
   belongs_to :user
 

@@ -3,7 +3,8 @@ class CreateUploads < ActiveRecord::Migration
     create_table :uploads do |table|
       table.string :title
       table.string :category
-      table.belongs_to :user
+      table.string :s3_url
+      table.belongs_to :user, index: true
       table.timestamps null: false
     end
 
