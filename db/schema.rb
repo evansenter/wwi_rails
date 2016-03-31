@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328220321) do
+ActiveRecord::Schema.define(version: 20160331032924) do
 
   create_table "contact_infos", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160328220321) do
 
   add_index "contact_infos", ["user_id"], name: "index_contact_infos_on_user_id", using: :btree
 
+  create_table "notices", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "notices", ["user_id"], name: "fk_rails_984b9c27bc", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
@@ -34,6 +44,16 @@ ActiveRecord::Schema.define(version: 20160328220321) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "category",   limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "uploads", ["user_id"], name: "fk_rails_15d41e668d", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -54,5 +74,7 @@ ActiveRecord::Schema.define(version: 20160328220321) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "contact_infos", "users"
+  add_foreign_key "notices", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "uploads", "users"
 end
