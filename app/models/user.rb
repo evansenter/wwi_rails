@@ -28,13 +28,15 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :uploads
 
+  default_scope { includes(:contact_info) }
+
   accepts_nested_attributes_for :contact_info
 
   validates_associated :contact_info, message: "is not complete"
 
   paginates_per 10
 
-  delegate :full_name, :role, *ContactInfo.roles.keys.product(%w[? !]).map(&:join), to: :contact_info
+  delegate :full_name, :role, :readable_role, *ContactInfo.roles.keys.product(%w[? !]).map(&:join), to: :contact_info
 
   private
 

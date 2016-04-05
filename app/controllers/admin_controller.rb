@@ -2,7 +2,7 @@ class AdminController < ApplicationController
   before_filter :require_admin!
 
   def manage_site
-    @users = User.order("created_at DESC").page(params[:page]).includes(:contact_info)
+    @users = User.order("created_at DESC").page(params[:page])
     @uploads = Upload.order("created_at DESC").page(params[:page]).includes(:user)
   end
 
@@ -11,14 +11,9 @@ class AdminController < ApplicationController
 
     if @upload && %w(true false).include?(params[:status])
       @upload.update_attribute(:published, params[:status])
-
-      flash.notice = if params[:status] == "true"
-        "The article is now published on the site."
-      else
-        "The article is no longer published on the site."
-      end
+      flash.notice = "The article is now set as '%s'." % @upload.readable_status
     else
-      flash.alert = "HAL: I'm sorry, Dave. I'm afraid I can't do that."
+      notify_general_error
     end
 
     redirect_to manage_path
@@ -28,12 +23,18 @@ class AdminController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user && @user != current_user && ContactInfo.roles.keys.include?(params[:role])
-      @user.update_attribute(:role, params[:role])
-      flash.notice = "%s now has the role '%s'." % [@user.email, @user.role.capitalize]
+      @user.contact_info.update_attribute(:role, params[:role])
+      flash.notice = "%s now has the role '%s'." % [@user.email, @user.readable_role]
     else
-      flash.alert = "HAL: I'm sorry, Dave. I'm afraid I can't do that."
+      notify_general_error
     end
 
     redirect_to manage_path
+  end
+
+  private
+
+  def notify_general_error
+    flash.alert = "HAL: I'm sorry, Dave. I'm afraid I can't do that."
   end
 end

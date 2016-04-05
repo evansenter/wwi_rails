@@ -23,4 +23,12 @@ class ContactInfo < ActiveRecord::Base
   def full_name
     [first_name, last_name].join(" ")
   end
+
+  def readable_role
+    {
+      "unauthorized" => "Read only",
+      "authorized"   => "Read and write",
+      "admin"        => "Administrator"
+    }[role]
+  end
 end
