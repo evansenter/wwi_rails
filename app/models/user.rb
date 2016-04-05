@@ -8,7 +8,7 @@
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
@@ -32,7 +32,9 @@ class User < ActiveRecord::Base
 
   validates_associated :contact_info, message: "is not complete"
 
-  delegate :full_name, :role, *ContactInfo::ROLES.product(%w[? !]).map(&:join), to: :contact_info
+  paginates_per 10
+
+  delegate :full_name, :role, *ContactInfo.roles.keys.product(%w[? !]).map(&:join), to: :contact_info
 
   private
 

@@ -4,14 +4,14 @@
 .row
   .col-md-8.col-md-offset-2
     %ul#document_tab_header.nav.nav-pills
-      - Upload::CATEGORIES.each do |title, id|
+      - Upload.categories_with_ids.each do |title, id|
         %li
           %a{ href: "##{id}", "data-toggle" => "pill" }= title
 
     #document_tab_content.tab-content
-      - Upload::CATEGORIES.each do |title, id|
+      - Upload.categories_with_ids.each_with_index do |(title, id), position|
         .tab-pane.fade{ id: id }
-          = render partial: "uploads_tab", locals: { title: title, id: id }
+          = render partial: "uploads_tab", locals: { id: position }
 
     :javascript
       $("ul#document_tab_header > li:first").addClass("active");
@@ -21,4 +21,4 @@
     - if admin_signed_in?
       .row
         .col-md-2.col-md-offset-10
-          = link_to("Upload research", new_upload_path, class: "btn btn-success")
+          = link_to("Upload research", new_article_path, class: "btn btn-success")

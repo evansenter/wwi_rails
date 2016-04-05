@@ -2,13 +2,15 @@
   %thead
     %tr
       %th File
+      %th.text-right Owner
       %th.text-right Uploaded
       - if admin_signed_in?
         %th.text-right Manage
   %tbody
-    - Upload.where(category: id).order("created_at DESC").map do |upload|
+    - Upload.published_in_category(id).map do |upload|
       %tr
         %td= link_to(upload.title, upload.s3_url, target: "_blank")
-        %td.text-right= upload.created_at.strftime('%B %e at %l:%M%p')
+        %td.text-right= upload.user.full_name
+        %td.text-right= upload.created_at_readable
         - if admin_signed_in?
-          %td.text-right= link_to "<span class='glyphicon glyphicon-remove colorize-red'></span>".html_safe, upload_path(upload), class: "btn", method: :delete, data: { confirm: "Are you sure?" }
+          %td.text-right= link_to "<span class='glyphicon glyphicon-remove colorize-red'></span>".html_safe, article_path(upload), class: "btn", method: :delete, data: { confirm: "Are you sure?" }

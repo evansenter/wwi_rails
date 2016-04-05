@@ -1,0 +1,38 @@
+%h1.bottom-buffer-xl
+  Manage users and content
+
+%h2
+  Registered users
+  %small Change user permissions
+
+%table.table.table-hover.table_condensed
+  %thead
+    %tr
+      %th Email
+      %th Name
+      %th Current Role
+      %th Set Role
+  %tbody
+    = render partial: "user", collection: @users
+
+.row
+  = paginate @users
+
+  - unless @uploads.empty?
+    %h2
+      Uploaded articles
+      %small Manage content visibility
+
+    %table.table.table-hover.table_condensed
+      %thead
+        %tr
+          %th Title
+          %th Owner
+          %th Uploaded
+          %th Visibility
+          %th Manage
+      %tbody
+        = render partial: "upload", collection: @uploads
+
+  .row
+    = paginate @uploads

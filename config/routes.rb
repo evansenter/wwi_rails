@@ -16,16 +16,17 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get "products/:id" => "catalog#view"
-  get "documents"    => "uploads#index"
-  get "manage_users" => "admin#manage_users"
+  # get "documents"    => "uploads#index"
+  get "manage" => "admin#manage_site"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get "products/:id/purchase" => "catalog#purchase", as: :purchase
   get "set_role/:user_id/:role" => "admin#set_user_role", as: "set_user_role"
+  get "set_status/:upload_id/:status" => "admin#set_upload_status", as: "set_article_status"
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :uploads, only: [:index, :new, :create, :destroy]
+  resources :articles, only: [:index, :new, :create, :destroy], controller: "uploads"
   resources :posts
 
   # Example resource route with options:

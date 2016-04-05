@@ -5,47 +5,18 @@
  */
 
  $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+ $lato-font-path: "lato/font/";
  @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
  @import "bootstrap-sass/assets/stylesheets/bootstrap";
+ @import "lato/scss/lato";
 
- html, body {
-   height: 100%;
+ body {
+  padding-top: 70px;
+  font-family: lato, Calibri, sans-serif;
  }
 
- #wrap {
-   min-height: 100%;
-   height: auto !important;
-   height: 100%;
-   /* Negative indent footer by it's height */
-   margin: 0 auto -160px;
- }
-
- #wrap > .container {
-   margin-bottom: 20px;
- }
-
- #wrap > nav.navbar + .container {
-   padding: 70px 0 30px;
- }
-
- .carousel + .container > .alert {
-   margin-top: 20px;
- }
-
- #push, #footer {
-   height: 160px;
- }
-
- #footer {
-   border-top: 1px solid #ddd;
-   padding-top: 20px;
-   padding-bottom: 30px;
-   background-image: linear-gradient(to top, rgba(255,255,255,.5) 0%, rgba(248,248,248,.5) 100%);
-   background-repeat: repeat-x;
- }
-
- .bottom-buffer-sm {
-   margin-bottom: 10px;
+ .bottom-buffer-xl {
+   margin-bottom: 40px;
  }
 
  .top-buffer {
@@ -56,25 +27,13 @@
    margin-top: 40px;
  }
 
- #wrap .container .table tr td {
-   vertical-align: middle;
- }
-
  h1, h2, h3, h4, h5, h6 {
-   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
- }
-
- h1 small, h2 small, h3 small, h4 small, h5, h5 small, h6, h6 small {
-   font-weight: 200;
+   font-family: "lato-light", Calibri, sans-serif;
  }
 
  .navbar-header .navbar-brand, .carousel h1 {
-   font-weight: 200;
+   font-weight: 300;
    font-size: 1.5em;
- }
-
- ul.nav li a {
-   font-weight: 200;
  }
 
  .carousel .carousel-caption {
@@ -116,11 +75,6 @@
  .carousel .carousel-indicators li.active {
    width: 10px;
    height: 10px;
- }
-
- .light-blue-gradient {
-   background-image: linear-gradient(to bottom, #fff 0%, #eaf0f7 100%);
-   background-repeat: repeat-x;
  }
 
  .colorize-blue {

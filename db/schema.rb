@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331033921) do
+ActiveRecord::Schema.define(version: 20160405061803) do
 
   create_table "contact_infos", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -37,13 +37,15 @@ ActiveRecord::Schema.define(version: 20160331033921) do
 
   create_table "uploads", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.string   "category",   limit: 255
+    t.integer  "category",   limit: 4,   default: 0
     t.string   "s3_url",     limit: 255
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "published",              default: false
   end
 
+  add_index "uploads", ["published"], name: "index_uploads_on_published", using: :btree
   add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

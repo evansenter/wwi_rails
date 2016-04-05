@@ -1,0 +1,9 @@
+%tr
+  %td= link_to(upload.title, upload.s3_url, target: "_blank")
+  %td= upload.user.full_name
+  %td= upload.created_at_readable
+  %td= upload.published? ? "Published" : "Hidden"
+  %td.text-center
+    = link_to "Publish", set_article_status_path(upload_id: upload.id, status: "true")
+    \|
+    = link_to "Unpublish", set_article_status_path(upload_id: upload.id, status: "false")

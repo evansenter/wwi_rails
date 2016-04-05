@@ -5,7 +5,7 @@
     %h1
       Upload research
 
-    = form_for(@upload, html: { id: "upload", class: "form-horizontal" }) do |form|
+    = form_for(@upload, url: articles_path, html: { id: "upload", class: "form-horizontal" }) do |form|
       = transloadit :save_pdf_to_s3
 
       .form-group{ class: (@upload.errors[:title].present? ? "has-error has-feedback" : "") }
@@ -24,7 +24,7 @@
       .form-group{ class: (@upload.errors[:category].present? ? "has-error has-feedback" : "") }
         = form.label :category, "Type of file", class: "col-sm-2 control-label"
         .col-sm-10
-          = form.select :category, options_for_select(Upload::CATEGORIES), { include_blank: true }, { class: "form-control" }
+          = form.select :category, options_for_select(Upload.categories.keys.map { |key| [key, key] }), { include_blank: true }, { class: "form-control" }
 
       .form-group
         .col-sm-10.col-sm-offset-2

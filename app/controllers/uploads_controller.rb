@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: uploads
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  category   :string(255)
+#  s3_url     :string(255)
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  published  :boolean          default(FALSE)
+#
+
 class UploadsController < ApplicationController
   before_filter :require_authorized_user!, only: [:new, :create, :destroy]
 
@@ -17,8 +31,8 @@ class UploadsController < ApplicationController
     end
 
     if @upload.save
-      flash.notice = "Your document has been created!"
-      redirect_to documents_path
+      flash.notice = "Your document has been created. After it is verified by an editor, it will be published."
+      redirect_to articles_path
     else
       render "new"
     end
@@ -28,7 +42,7 @@ class UploadsController < ApplicationController
     Upload.find(params[:id]).destroy
     flash.notice = "The file has been permanently deleted."
 
-    redirect_to uploads_path
+    redirect_to articles_path
   end
 
   private

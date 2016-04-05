@@ -21,4 +21,6 @@
 
 en:
   navigation:
-    uploads: "Research"
+    research: "Research"
+    admin: "Admin"
+

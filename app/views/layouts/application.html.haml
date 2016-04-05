@@ -18,10 +18,7 @@
       ga('create', 'UA-67542557-1', 'auto');
       ga('send', 'pageview');
   %body{ role: "document" }
-    #wrap
-      = render "shared/navigation"
-      .container{ role: "main" }
-        = render "shared/flash"
-        = yield
-      #push
-    = render "shared/footer"
+    = render "shared/navigation"
+    .container{ role: "main" }
+      = render "shared/flash"
+      = yield
