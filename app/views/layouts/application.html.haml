@@ -3,8 +3,9 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}/
     %title World Water Institute
+    = include_gon
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -16,7 +17,11 @@
 
       ga('create', 'UA-67542557-1', 'auto');
       ga('send', 'pageview');
-  %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+  %body{ role: "document" }
+    #wrap
+      = render "shared/navigation"
+      .container{ role: "main" }
+        = render "shared/flash"
+        = yield
+      #push
+    = render "shared/footer"

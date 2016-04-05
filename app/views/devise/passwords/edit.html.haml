@@ -1,19 +1,26 @@
-%h2 Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    %br/
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-      %br/
-    = f.password_field :password, autofocus: true, autocomplete: "off"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Change my password"
-= render "devise/shared/links"
+%h1 Change your password
+
+.row.top-buffer-xl
+  .col-md-6.col-md-offset-3
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, class: "form-horizontal" }) do |form|
+      = form.hidden_field :reset_password_token
+      
+      .form-group
+        = form.label :password, class: "col-md-2 control-label"
+        .col-md-8
+          = form.password_field :password, class: "form-control"
+          - if resource.errors[:password].present?
+            %span.glyphicon.glyphicon-remove.form-control-feedback
+
+      .form-group
+        = form.label :password_confirmation, "Confirm", class: "col-md-2 control-label"
+        .col-md-8
+          = form.password_field :password_confirmation, class: "form-control"
+          - if resource.errors[:password_confirmation].present?
+            %span.glyphicon.glyphicon-remove.form-control-feedback
+
+      .form-group
+        .col-md-10.text-right
+          .btn-group
+            = form.submit "Change my password", class: "btn btn-success"
+              

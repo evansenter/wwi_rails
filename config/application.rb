@@ -30,5 +30,8 @@ module WwiRails
       require "awesome_print"
       config.console = Pry
     end
+
+    # Minimum Sass number precision required by bootstrap-sass
+    ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
   end
 end

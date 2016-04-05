@@ -5,7 +5,6 @@ gem "annotate"
 gem "bower"
 gem "devise"
 gem "figaro"
-gem "font-awesome-sass"
 gem "formtastic"
 gem "gibbon"
 gem "gon"
@@ -14,14 +13,17 @@ gem "jquery-rails"
 gem "kaminari"
 gem "mysql2"
 gem "newrelic_rpm"
-gem "puma"
 gem "rails"
-gem "rails_12factor", group: :production
 gem "sass-rails"
 gem "sucker_punch"
 gem "transloadit-rails"
 gem "turbolinks"
 gem "uglifier"
+
+group :production do
+  gem "rails_12factor"
+  gem "puma"
+end
 
 group :development, :test do
   gem "awesome_print"

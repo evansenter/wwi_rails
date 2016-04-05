@@ -12,20 +12,18 @@
 #
 
 class Upload < ActiveRecord::Base
-  # CATEGORIES = [
-  #   ["ARC Documents",     "arc_documents"],
-  #   ["Financial Reports", "financial_reports"],
-  #   ["HOA Documents",     "hoa_documents"],
-  #   ["Gazette",           "gazette"],
-  #   ["Maintenance",       "maintenance"],
-  #   ["Minutes",           "minutes"],
-  #   ["Projects",          "projects"]
-  # ]
+  CATEGORIES = [
+    ["Water Policy",    "water_policy"],
+    ["Water Security",  "water_security"],
+    ["Global Markets",  "global_markets"],
+    ["Capital Markets", "capital_markets"],
+    ["Other",           "other"],
+  ]
 
   belongs_to :user
 
   validates :title,    presence: true, length: { minimum: 5, if: "title.present?" }
-  # validates :category, presence: true, inclusion: { in: CATEGORIES.map(&:last), if: "category.present?" }
+  validates :category, presence: true, inclusion: { in: CATEGORIES.map(&:last), if: "category.present?" }
   validates :s3_url,   presence: true, uniqueness: true
   validates_associated :user
 end

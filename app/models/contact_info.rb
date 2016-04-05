@@ -12,7 +12,7 @@
 #
 
 class ContactInfo < ActiveRecord::Base
-  ROLES = %i[unregistered registered verified admin]
+  ROLES = %i[unauthorized authorized admin]
 
   belongs_to :user
 

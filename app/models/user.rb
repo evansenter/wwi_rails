@@ -22,10 +22,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  after_create :subscribe_user_to_mailing_list
+  # after_create :subscribe_user_to_mailing_list
 
   has_one :contact_info
   has_many :posts
+  has_many :uploads
 
   accepts_nested_attributes_for :contact_info
 
@@ -35,7 +36,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def subscribe_user_to_mailing_list
-    SubscribeUserToMailingListJob.new.async.perform(self)
-  end
+  # def subscribe_user_to_mailing_list
+  #   SubscribeUserToMailingListJob.new.async.perform(self)
+  # end
 end

@@ -1,6 +1,5 @@
 class UploadsController < ApplicationController
-  before_filter :require_verified_user!
-  before_filter :require_admin!, only: [:new, :create, :destroy]
+  before_filter :require_authorized_user!, only: [:new, :create, :destroy]
 
   include Transloadit::Rails::ParamsDecoder
 

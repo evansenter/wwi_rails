@@ -1,0 +1,11 @@
+- type        ||= :text_field
+- placeholder ||= ""
+- error_field ||= field
+- title       ||= nil
+
+.form-group{ class: (resource.errors[error_field].present? ? "has-error has-feedback" : "") }
+  = form.label field, title, class: "col-md-2 control-label"
+  .col-md-8
+    = form.send(type, field, class: "form-control", placeholder: placeholder)
+    - if resource.errors[error_field].present?
+      %span.glyphicon.glyphicon-remove.form-control-feedback

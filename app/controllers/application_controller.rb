@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def require_verified_user!
-    unless user_signed_in? && current_user.verified?
-      flash.alert = "Your account must be verified before doing that."
+  def require_authorized_user!
+    unless user_signed_in? && (current_user.authorized? || current_user.admin?)
+      flash.alert = "Your account must be authorized before doing that."
       redirect_to :back
     end
   end

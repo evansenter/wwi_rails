@@ -1,21 +1,28 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.row
+  .col-md-8.col-md-offset-2
+    - if resource.errors.any?
+      = render partial: "shared/form_errors", locals: { errors: resource.errors }
+
+    - resource.build_contact_info unless resource.contact_info
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |form|
+      %fieldset
+        %legend.lead Credentials
+        = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :email, type: :email_field }
+        .row
+          .col-md-6
+            = render partial: "shared/form_field_left", locals: { width: 4, form: form, resource: resource, field: :password, type: :password_field }
+          .col-md-6
+            = render partial: "shared/form_field_right", locals: { width: 4, form: form, resource: resource, field: :password_confirmation, type: :password_field, title: "Confirm" }
+
+        %legend.lead Contact Info
+        = form.fields_for :contact_info do |contact_form|
+          .row
+            .col-md-6
+              = render partial: "shared/form_field_left", locals: { width: 4, form: contact_form, resource: resource, field: :first_name, error_field: :"contact_info.first_name" }
+            .col-md-6
+              = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :last_name, error_field: :"contact_info.last_name" }
+
+          .form-group
+            .col-md-10.text-right
+              = form.submit "Register", class: "btn btn-success"
+
