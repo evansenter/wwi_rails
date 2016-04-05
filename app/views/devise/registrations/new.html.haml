@@ -21,6 +21,14 @@
               = render partial: "shared/form_field_left", locals: { width: 4, form: contact_form, resource: resource, field: :first_name, error_field: :"contact_info.first_name" }
             .col-md-6
               = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :last_name, error_field: :"contact_info.last_name" }
+          .row
+            .col-md-6
+              .form-group{ class: (resource.errors[:"contact_info.job_role"].present? ? "has-error has-feedback" : "") }
+                = contact_form.label :job_role, "Position", class: "col-md-4 control-label"
+                .col-md-8
+                  = contact_form.select :job_role, options_for_select(ContactInfo.job_roles.keys.map { |key| [key, key] }), { include_blank: true }, { class: "form-control" }
+            .col-md-6
+              = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :institution, error_field: :"contact_info.institution" }
 
           .form-group
             .col-md-10.text-right

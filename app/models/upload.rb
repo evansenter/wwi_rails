@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  category   :string(255)
+#  category   :integer
 #  s3_url     :string(255)
 #  user_id    :integer
 #  created_at :datetime         not null

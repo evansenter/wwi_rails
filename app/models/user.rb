@@ -36,7 +36,13 @@ class User < ActiveRecord::Base
 
   paginates_per 10
 
-  delegate :full_name, :role, :readable_role, *ContactInfo.roles.keys.product(%w[? !]).map(&:join), to: :contact_info
+  delegate :full_name,
+           :role,
+           :readable_role,
+           :job_role,
+           :institution,
+           *ContactInfo.roles.keys.product(%w[? !]).map(&:join),
+           to: :contact_info
 
   private
 

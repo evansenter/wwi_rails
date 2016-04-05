@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405061803) do
+ActiveRecord::Schema.define(version: 20160405221617) do
 
   create_table "contact_infos", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.integer  "role",       limit: 4,   default: 0
+    t.string   "first_name",  limit: 255
+    t.string   "last_name",   limit: 255
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "role",        limit: 4,   default: 0
+    t.integer  "job_role",    limit: 4
+    t.string   "institution", limit: 255
   end
 
   add_index "contact_infos", ["user_id"], name: "index_contact_infos_on_user_id", using: :btree
@@ -37,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160405061803) do
 
   create_table "uploads", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.integer  "category",   limit: 4,   default: 0
+    t.integer  "category",   limit: 4
     t.string   "s3_url",     limit: 255
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",                             null: false

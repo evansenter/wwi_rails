@@ -1,10 +1,11 @@
 %tr
   %td= user.email
   %td= user.full_name
-  %td= user.readable_role
+  %td= user.job_role
+  %td= user.institution
   %td.text-center
-    = link_to "Read only", set_user_role_path(user_id: user.id, role: "unauthorized")
+    = render partial: "enum", locals: { label: "Read only", action: set_user_role_path(user_id: user.id, role: "unauthorized"), selected: user.unauthorized? }
     \|
-    = link_to "Read and write", set_user_role_path(user_id: user.id, role: "authorized")
+    = render partial: "enum", locals: { label: "Read and write", action: set_user_role_path(user_id: user.id, role: "authorized"), selected: user.authorized? }
     \|
-    = link_to "Administrator", set_user_role_path(user_id: user.id, role: "admin")
+    = render partial: "enum", locals: { label: "Administrator", action: set_user_role_path(user_id: user.id, role: "admin"), selected: user.admin? }

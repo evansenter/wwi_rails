@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << {
       contact_info_attributes: [
         :first_name,
-        :last_name
+        :last_name,
+        :job_role,
+        :institution
       ]
     }
   end

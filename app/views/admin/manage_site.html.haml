@@ -10,7 +10,8 @@
     %tr
       %th Email
       %th Name
-      %th Current Role
+      %th Position
+      %th Institution
       %th Set Role
   %tbody
     = render partial: "user", collection: @users
@@ -30,7 +31,6 @@
           %th Owner
           %th Uploaded
           %th Visibility
-          %th Manage
       %tbody
         = render partial: "upload", collection: @uploads
 

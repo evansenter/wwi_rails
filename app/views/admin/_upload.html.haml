@@ -2,8 +2,7 @@
   %td= link_to(upload.title, upload.s3_url, target: "_blank")
   %td= upload.user.full_name
   %td= upload.created_at_readable
-  %td= upload.readable_status
   %td.text-center
-    = link_to "Publish", set_article_status_path(upload_id: upload.id, status: "true")
+    = render partial: "enum", locals: { label: "Published", action: set_article_status_path(upload_id: upload.id, status: "true"), selected: upload.published? }
     \|
-    = link_to "Unpublish", set_article_status_path(upload_id: upload.id, status: "false")
+    = render partial: "enum", locals: { label: "Unpublished", action: set_article_status_path(upload_id: upload.id, status: "false"), selected: !upload.published? }
