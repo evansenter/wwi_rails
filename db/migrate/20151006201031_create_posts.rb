@@ -4,10 +4,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.boolean :published
-      t.references :user, index: true
-
+      t.belongs_to :user, index: true
       t.timestamps null: false
     end
+
     add_foreign_key :posts, :users
   end
 end

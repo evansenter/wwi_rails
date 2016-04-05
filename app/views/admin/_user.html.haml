@@ -1,0 +1,10 @@
+%tr
+  %td= user.email
+  %td= user.full_name
+  %td= user.role.capitalize
+  %td.text-center
+    = link_to "Read only", set_user_role_path(user_id: user.id, role: "unauthorized")
+    \|
+    = link_to "Read and write", set_user_role_path(user_id: user.id, role: "authorized")
+    \|
+    = link_to "Administrator", set_user_role_path(user_id: user.id, role: "admin")

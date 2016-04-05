@@ -1,17 +1,15 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.row
+  .col-md-8.col-md-offset-2
+    %h2 Sign in
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |form|    
+      = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :email,    type: :email_field }
+      = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :password, type: :password_field }
+
+      .form-group
+        .col-md-10.text-right
+          .btn-group
+            = form.submit "Sign in", class: "btn btn-success"
+            = link_to("Forgot password?", new_user_password_path, class: "btn btn-warning")
+            = link_to("Sign up", register_path, class: "btn btn-primary")
+          
+    

@@ -1,0 +1,7 @@
+.alert.alert-danger
+  %h4.error-title
+    The following errors occurred
+    %small Please fix them to continue
+  %ul.error-list
+    - errors.full_messages.each do |message|
+      %li= message

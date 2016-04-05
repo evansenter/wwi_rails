@@ -1,5 +1,18 @@
+# == Schema Information
+#
+# Table name: contact_infos
+#
+#  id         :integer          not null, primary key
+#  first_name :string(255)
+#  last_name  :string(255)
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  role       :integer          default("0")
+#
+
 class ContactInfo < ActiveRecord::Base
-  ROLES = %i[basic admin]
+  ROLES = %i[unauthorized authorized admin]
 
   belongs_to :user
 

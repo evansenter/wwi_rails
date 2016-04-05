@@ -1,0 +1,12 @@
+- if user_signed_in?
+  .navbar-form.navbar-right
+    = link_to("Logout", logout_path, method: :delete, class: "btn btn-default")
+- else
+  = form_for(User.new, as: :user, url: session_path(:user), html: { class: "navbar-form navbar-right" }) do |form|
+    .form-group
+      = form.email_field :email, class: "form-control", placeholder: "Email"
+      = form.password_field :password, class: "form-control", placeholder: "Password"
+    .btn-group
+      = form.submit "Sign in", class: "btn btn-success"
+      = link_to("Sign up", register_path, class: "btn btn-primary")
+

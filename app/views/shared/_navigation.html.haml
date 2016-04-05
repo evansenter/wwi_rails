@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default.navbar-fixed-top.light-blue-gradient{ role: "navigation" }
+  .container
+    .navbar-header
+      %button.navbar-toggle{ "type" => "button", "data-toggle" => "collapse", "data-target" => "#navbar_links" }
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to("World Water Institute", root_path, class: "navbar-brand")
+    #navbar_links.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.uploads_tab
+          = link_to(t("navigation.uploads"), uploads_path)
+        - if admin_signed_in?
+          %li.admin_tab
+            = link_to(t("navigation.admin"), manage_users_path)
+      = render "shared/login"
+

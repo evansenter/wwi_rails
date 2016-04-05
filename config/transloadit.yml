@@ -1,0 +1,39 @@
+development:
+  # the jquery_sdk version you want to use, read up on it here:
+  # https://transloadit.com/blog/2013/02/transloadit-javascript-plugin-and-jquery-1-9
+  # defaults to latest
+  # use "v1.0.0" if you need IE6 support (using jQuery < 1.9)
+  jquery_sdk_version: 'latest'
+  auth:
+    key     : <%= Figaro.env.transloadit_auth_key %>
+    secret  : <%= Figaro.env.transloadit_secret_key %> # this is optional, but highly recommended, https://transloadit.com/docs/authentication
+    duration: 1800 # 30 minute validity period for signed upload forms
+
+  templates:
+    save_pdf_to_s3:
+      steps:
+        store:
+          robot : "/s3/store"
+          bucket: <%= Figaro.env.s3_bucket_name %>
+          key:    <%= Figaro.env.aws_access_key_id %>
+          secret: <%= Figaro.env.aws_secret_access_key %>
+
+production:
+  # the jquery_sdk version you want to use, read up on it here:
+  # https://transloadit.com/blog/2013/02/transloadit-javascript-plugin-and-jquery-1-9
+  # defaults to latest
+  # use "v1.0.0" if you need IE6 support (using jQuery < 1.9)
+  jquery_sdk_version: 'latest'
+  auth:
+    key     : <%= Figaro.env.transloadit_auth_key %>
+    secret  : <%= Figaro.env.transloadit_secret_key %> # this is optional, but highly recommended, https://transloadit.com/docs/authentication
+    duration: 1800 # 30 minute validity period for signed upload forms
+
+  templates:
+    save_pdf_to_s3:
+      steps:
+        store:
+          robot : "/s3/store"
+          bucket: <%= Figaro.env.s3_bucket_name %>
+          key:    <%= Figaro.env.aws_access_key_id %>
+          secret: <%= Figaro.env.aws_secret_access_key %>
