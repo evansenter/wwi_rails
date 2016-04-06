@@ -1,0 +1,6 @@
+!!!
+%html{:lang => "en"}
+  = render partial: "shared/head", locals: { stylesheet_filename: "landing" }
+  %body{ role: "document" }
+    = render "shared/navigation"
+    = yield

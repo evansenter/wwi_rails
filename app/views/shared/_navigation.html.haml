@@ -14,4 +14,6 @@
           %li.admin_tab
             = link_to(t("navigation.admin"), manage_path)
       = render "shared/login"
+      - if current_user
+        = render "shared/search"
 
