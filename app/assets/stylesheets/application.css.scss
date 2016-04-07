@@ -1,63 +1,93 @@
 /*
- *= require_self
- *= bootstrap.transloadit
- */
+*= require_self
+*= bootstrap.transloadit
+*/
 
- $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
- $lato-font-path: "lato/font/";
- @import "font-awesome-sprockets";
- @import "font-awesome";
- @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
- @import "bootstrap-sass/assets/stylesheets/bootstrap";
- @import "lato/scss/lato";
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+$lato-font-path: "lato/font/";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "lato/scss/lato";
+body {
+    padding-top: 70px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
- body {
-  padding-top: 70px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
- }
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #eee;
+}
 
- .bottom-buffer-xl {
-   margin-bottom: 40px;
- }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #333;
+}
 
- .top-buffer {
-   margin-top: 20px;
- }
+nav.navbar {
+    background-color: #2d3e50;
+    color: white;
+}
 
- .top-buffer-xl {
-   margin-top: 40px;
- }
+nav.navbar ul.navbar-nav > li > a {
+    color: white;
+    font-weight: 300;
+}
 
- h1, h2, h3, h4, h5, h6 {
-   font-family: "lato-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
- }
+nav.navbar ul.navbar-nav > li.uploads_tab.active > a,
+nav.navbar ul.navbar-nav > li > a:hover,
+nav.navbar ul.navbar-nav > li > a:focus {
+    background-color: #2d3e50;
+    color: #eee;
+    font-weight: 600;
+}
 
- .navbar-brand {
-  padding: 0;
- }
+.navbar-brand {
+    padding: 5px;
+}
 
- .colorize-blue {
-   color: #428bca;
- }
+.bottom-buffer-xl {
+    margin-bottom: 40px;
+}
 
- .colorize-red {
-   color: #c12e2a;
- }
+.top-buffer {
+    margin-top: 20px;
+}
 
- .flexible_container {
-     position: relative;
-     padding-bottom: 56.25%;
-     padding-top: 30px;
-     height: 0;
-     overflow: hidden;
- }
+.top-buffer-xl {
+    margin-top: 40px;
+}
 
- .flexible_container iframe,
- .flexible_container object,
- .flexible_container embed {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "lato-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.colorize-blue {
+    color: #428bca;
+}
+
+.colorize-red {
+    color: #c12e2a;
+}
+
+.flexible_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.flexible_container iframe,
+.flexible_container object,
+.flexible_container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
