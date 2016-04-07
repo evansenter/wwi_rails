@@ -5,7 +5,8 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to("World Water Institute", root_path, class: "navbar-brand")
+      %a{href: root_path}
+        %img.navbar-brand.img-responsive{alt: "WWI Logo", src: "/assets/wwi_logo.svg"}/
     #navbar_links.navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li.uploads_tab

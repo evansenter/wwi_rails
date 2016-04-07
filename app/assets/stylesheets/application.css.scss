@@ -5,13 +5,15 @@
 
  $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
  $lato-font-path: "lato/font/";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
  @import "bootstrap-sass/assets/stylesheets/bootstrap";
  @import "lato/scss/lato";
 
  body {
   padding-top: 70px;
-  font-family: lato, Calibri, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
 
  .bottom-buffer-xl {
@@ -27,53 +29,11 @@
  }
 
  h1, h2, h3, h4, h5, h6 {
-   font-family: "lato-light", Calibri, sans-serif;
+   font-family: "lato-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
 
- .navbar-header .navbar-brand, .carousel h1 {
-   font-weight: 300;
-   font-size: 1.5em;
- }
-
- .carousel .carousel-caption {
-   left: 10%;
-   right: 10%;
- }
-
- .carousel h1 {
-   font-size: 3.5em;
-   letter-spacing: .05em;
- }
-
- .carousel .carousel-caption {
-   background: -moz-linear-gradient(left,  rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-   background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.01)), color-stop(35%,rgba(0,0,0,0.35)), color-stop(50%,rgba(0,0,0,0.35)), color-stop(65%,rgba(0,0,0,0.35)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-   background: -webkit-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-   background: -o-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-   background: -ms-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* IE10+ */
-   background: linear-gradient(to right,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* W3C */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
-   bottom: 0;
- }
-
- .carousel .carousel-control {
-   width: 10%;
-   background: none;
- }
-
- .carousel ol.carousel-indicators {
-   bottom: 10px;
-   margin-bottom: 0;
- }
-
- .carousel .carousel-indicators li {
-   width: 8px;
-   height: 8px;
- }
-
- .carousel .carousel-indicators li.active {
-   width: 10px;
-   height: 10px;
+ .navbar-brand {
+  padding: 0;
  }
 
  .colorize-blue {
